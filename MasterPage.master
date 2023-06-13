@@ -1,0 +1,268 @@
+﻿<%@ Master Language="VB" CodeFile="MasterPage.master.vb" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html>
+<head>
+<title>299 Club | Where value meets style</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript">
+        $(document).ready(function() {
+            $(".dropdown img.flag").addClass("flagvisibility");
+
+            $(".dropdown dt a").click(function() {
+                $(".dropdown dd ul").toggle();
+            });
+                        
+            $(".dropdown dd ul li a").click(function() {
+                var text = $(this).html();
+                $(".dropdown dt a span").html(text);
+                $(".dropdown dd ul").hide();
+                $("#result").html("Selected value is: " + getSelectedValue("sample"));
+            });
+                        
+            function getSelectedValue(id) {
+                return $("#" + id).find("dt a span.value").html();
+            }
+
+            $(document).bind('click', function(e) {
+                var $clicked = $(e.target);
+                if (! $clicked.parents().hasClass("dropdown"))
+                    $(".dropdown dd ul").hide();
+            });
+
+
+            $("#flagSwitcher").click(function() {
+                $(".dropdown img.flag").toggleClass("flagvisibility");
+            });
+        });
+     </script>
+<!-- start menu -->     
+<link href="css/megamenu.css" rel="stylesheet" type="text/css" media="all" />
+<script type="text/javascript" src="js/megamenu.js"></script>
+<script>$(document).ready(function(){$(".megamenu").megamenu();});</script>
+<!-- end menu -->
+<!-- top scrolling -->
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+   <script type="text/javascript">
+		jQuery(document).ready(function($) {
+			$(".scroll").click(function(event){		
+				event.preventDefault();
+				$('html,body').animate({scrollTop:$(this.hash).offset().top},1200);
+			});
+		});
+	</script>
+</head>
+<body>
+<form id="form1" runat="server">
+ <div class="footer-top">
+       		<div class="wrap">
+       			   <div class="col_1_of_footer-top span_1_of_footer-top">
+				  	 <ul class="f_list">
+				  	 	<li><img src="images/f_icon.png" alt=""/><span class="delivery">Easy delivery with hassel free service</span></li>
+				  	 </ul>
+				   </div>
+				   <div class="col_1_of_footer-top span_1_of_footer-top">
+				  	<ul class="f_list">
+				  	 	<li><img src="images/f_icon1.png" alt=""/><span class="delivery">Customer Service :<span class="white"> (+91) 97737 65103 </span></span></li>
+				  	 </ul>
+				   </div>
+				   <div class="col_1_of_footer-top span_1_of_footer-top">
+				  	<ul class="f_list">
+				  	 	<li><img src="images/f_icon2.png" alt=""/><span class="delivery">India’s leading e-commerce Company</span></li>
+				  	 </ul>
+				   </div>
+				  <div class="clear"></div>
+			 </div>
+       	 </div>
+  <div class="header-top">
+	 <div class="wrap"> 
+		<div class="logo">
+			<a href="Default.aspx"><img src="images/logo.png" width="230px" height="49px" alt=""/></a>
+	    </div>
+	    <div class="cssmenu">
+		   
+		   
+		    <asp:LinkButton ID="LinkButton5" runat="server" CausesValidation="False"  Font-Size="0.9em"
+            ForeColor="#575757" style="color: #575757">Hi,</asp:LinkButton>
+        <asp:LinkButton ID="LinkButton3" runat="server" CausesValidation="False"  Font-Size="0.9em"
+            ForeColor="#575757" style="color: #575757">Guest</asp:LinkButton>&nbsp;
+      
+         
+             
+            
+             <asp:LinkButton ID="LinkButton4" runat="server" CausesValidation="False"  Font-Size="0.9em"
+            ForeColor="#575757" style="color: #575757" Visible="False">Logout</asp:LinkButton>&nbsp;&nbsp;
+            
+              <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="False"  Font-Size="0.9em"
+            style="color: #575757;">Login</asp:LinkButton>&nbsp;&nbsp;
+      
+             
+            
+               <asp:LinkButton ID="LinkButton2" runat="server" CausesValidation="False"  Font-Size="0.9em"
+            style="color: #575757; ">Sign-up</asp:LinkButton>&nbsp;&nbsp;
+             
+           
+              <asp:LinkButton ID="LinkButton6" runat="server" CausesValidation="False" Font-Size="0.9em"
+            style="color: #575757; ">Shopping Cart</asp:LinkButton>  
+         (   <asp:LinkButton ID="LinkButton7" runat="server" CausesValidation="False"  Font-Size="0.9em"
+            style="color: #575757; ">0</asp:LinkButton> )&nbsp;&nbsp;
+		   
+		   
+		
+		</div>
+		<ul class="icon2 sub-icon2 profile_img">
+			<li><a class="active-icon c2" href="#"> </a>
+				<ul class="sub-icon2 list">
+					<li><h3>For Merchant</h3><a href=""></a></li>
+					<li><p>Register and start selling <a href="#">Click here</a></p></li>
+				</ul>
+			</li>
+		</ul>
+		<div class="clear"></div>
+ 	</div>
+   </div>
+   <div class="header-bottom">
+   	<div class="wrap">
+   		<!-- start header menu -->
+		<ul class="megamenu skyblue">
+		    <li><a class="color1" href="Default.aspx">Home</a></li>
+
+			<li><a class="color2" href="Product.aspx?Category=Mens&SubCategory=Shoes">Men Shoes</a>				
+				</li>
+
+            <li><a class="color4" href="Product.aspx?SubCategory=Ladies Shoes">Ladies Shoes</a>				
+				</li>
+
+
+            <li><a class="color3" href="Product.aspx?SubCategory=Chappals">Chappals</a>				
+				</li>
+
+            <li><a class="color2" href="Product.aspx?SubCategory=Party">Party Footware</a>				
+				</li>
+
+  			  <li><a class="color4" href="Product.aspx?SubCategory=Outing">Outing</a>				
+				</li> 	
+             <li><a class="color4" href="Product.aspx?SubCategory=Kids">Kids</a>				
+				</li> 	
+            			
+						
+            <li style="float: right;"><a class="color7" style="background: #0077d1;color: #ffffff;" href="Special.aspx" >Special Offers</a></li>
+			
+		   </ul>
+		   <div class="clear"></div>
+     	</div>
+       </div>
+       
+             <div class="main">
+
+    <div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+
+
+</div>
+
+
+
+  <div class="footer">
+       	  <div class="footer-top">
+       		<div class="wrap">
+       			  <div class="col_1_of_footer-top span_1_of_footer-top">
+				  	 <ul class="f_list">
+				  	 	<li><img src="images/f_icon.png" alt=""/><span class="delivery">Easy delivery with hassel free service</span></li>
+				  	 </ul>
+				   </div>
+				   <div class="col_1_of_footer-top span_1_of_footer-top">
+				  	<ul class="f_list">
+				  	 	<li><img src="images/f_icon1.png" alt=""/><span class="delivery">Customer Service :<span class="white"> (+91) 97737 65103 </span></span></li>
+				  	 </ul>
+				   </div>
+				   <div class="col_1_of_footer-top span_1_of_footer-top">
+				  	<ul class="f_list">
+				  	 	<li><img src="images/f_icon2.png" alt=""/><span class="delivery">India’s leading e-commerce Company</span></li>
+				  	 </ul>
+				   </div>
+				  <div class="clear"></div>
+			 </div>
+       	 </div>
+       
+       	 <div class="footer-bottom">
+       	 	<div class="wrap">
+       	 		<div class="section group">
+				<div class="col_1_of_5 span_1_of_5">
+					<h3 class="m_9">Secure Payment</h3>
+                    <img src="images/paytm.jpg" width="95%" />
+			          
+				</div>
+				<div class="col_1_of_5 span_1_of_5">
+					<h3 class="m_9">Where value meets style.. </h3>
+                    <img src="images/acc-footer.jpg" width="95%" />
+				</div>
+			
+				<div class="col_1_of_5 span_1_of_5">
+					<h3 class="m_9">Support</h3>
+					<ul class="list1">
+					   
+					   <li><a href="#">Customer Care</a></li>
+					 	<li><a href="#">Payment Terms</a></li>
+					
+					   <li><a href="#">About Us </a></li>
+					   <li><a href="Career.aspx">Career </a></li>
+					   <li><a href="Contact.aspx">Contact Us</a></li>
+				
+					
+					   <li><a href="#">Privacy Policy</a></li>
+					  
+		            </ul>
+		            
+				</div>
+				<div class="col_1_of_5 span_1_of_5">
+				
+                    <img src="images/footer-final.jpg" width="100%" />
+				
+				</div>
+				<div class="clear"></div>
+			</div>
+       	 	</div>
+       	 </div>
+       	 <div class="copy">
+       	   <div class="wrap">
+       	   	  <p>© All rights reserved 2023 | 299 Club</p>
+       	   </div>
+       	 </div>
+       </div>
+       <script type="text/javascript">
+			$(document).ready(function() {
+			
+				var defaults = {
+		  			containerID: 'toTop', // fading element id
+					containerHoverID: 'toTopHover', // fading element hover id
+					scrollSpeed: 1200,
+					easingType: 'linear' 
+		 		};
+				
+				
+				$().UItoTop({ easingType: 'easeOutQuart' });
+				
+			});
+		</script>
+        <a href="#" id="toTop" style="display: block;"><span id="toTopHover" style="opacity: 1;"></span></a>
+    </form>
+    </body>
+</html>
+
+
+
+
+
+
